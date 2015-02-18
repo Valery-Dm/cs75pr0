@@ -1,0 +1,11 @@
+.backimage{
+	background-image:url('../images/pizza.jpg');
+	background-size:110%;
+	color:White;
+	text-shadow: 2px 2px 2px #000;
+}
+.logo{
+	margin-bottom:20px;
+	font-size:2.6em;
+}
+

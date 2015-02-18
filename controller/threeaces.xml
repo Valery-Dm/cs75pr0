@@ -1,0 +1,131 @@
+<?xml version="1.0"?>
+<company>
+	<about>
+		<title>Three Aces</title>
+		<phone>
+			617 555-55-55
+		</phone>
+		<address>
+			1xxx Massachusetts Ave,
+			Cambridge, MA 02139
+		</address>
+    </about>
+	<menu>
+		<category>
+			<name>Pizzas</name>
+			<item>
+				<name>Tomato &amp; Cheese</name>
+				<price>
+					<small>5.50</small>
+					<large>9.75</large>
+				</price>
+				<!-- tag photo with path to an image can be here --> 
+			</item>
+			<item>
+				<name>Onions</name>
+				<price>
+					<small>6.85</small>
+					<large>10.85</large>
+				</price>
+			</item>
+			<item>
+				<name>Peppers</name>
+				<price>
+					<small>6.85</small>
+					<large>10.75</large>
+				</price>
+			</item>
+			<item>
+				<name>Broccoli</name>
+				<price>
+					<small>6.85</small>
+					<large>10.85</large>
+				</price>
+			</item>
+			<item>
+				<name>Fresh Garlic</name>
+				<price>
+					<small>6.85</small>
+					<large>10.75</large>
+				</price>
+			</item>
+			<item>
+				<name>Mushrooms</name>
+				<price>
+					<small>6.85</small>
+					<large>10.85</large>
+				</price>
+			</item>
+			<item>
+				<name>Fresh Spinach</name>
+				<price>
+					<small>6.85</small>
+					<large>10.75</large>
+				</price>
+			</item>
+		</category>
+		<category>
+			<name>Special Pizzas</name>
+			<item>
+				<name>Three Aces Special</name>
+				<price>
+					<small>9.80</small>
+					<large>15.80</large>
+				</price>
+			</item>
+			<item>
+				<name>Mediterranean</name>
+				<price>
+					<small>9.80</small>
+					<large>15.80</large>
+				</price>
+			</item>
+		</category>
+		<category>
+			<name>Special Dinners</name>
+			<item>
+				<name>Gyro Plate</name>
+				<price>
+					7.25
+				</price>
+			</item>
+			<item>
+				<name>Chicken Wing Dinner</name>
+				<price>
+					7.25
+				</price>
+			</item>
+		</category>
+		<category>
+			<name>Grinders</name>
+			<item>
+				<name>Meatless</name>
+				<price>
+					<small>4.50</small>
+					<large>4.95</large>
+				</price>
+			</item>
+			<item>
+				<name>Hamburger</name>
+				<price>
+					<small>4.75</small>
+					<large>5.75</large>
+				</price>
+			</item>
+			<item>
+				<name>Gyro on Pita</name>
+				<price>
+					<small></small>
+					<large>5.50</large>
+				</price>
+			</item>
+			<item>
+				<name>Grilled Chicken on Pita</name>
+				<price>
+					<small></small>
+					<large>5.25</large>
+				</price>
+			</item>
+		</category>
+	</menu>
+</company>
