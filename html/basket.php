@@ -31,8 +31,8 @@
 					if (isset($_SESSION['basket'])){
 						$itemid = 0;
 						foreach( $_SESSION['basket'] as $item ){ ?>
-							<tr id="tr-id-<?= ++$itemid; ?>">
-								<td id="tr-id-<?= $itemid; ?>"><?= $itemid; ?></td>
+							<tr>
+								<td id="tr-id-<?= ++$itemid; ?>"><?= $itemid; ?></td>
 								<td><?= htmlspecialchars($item['item']); ?></td>
 								<td><?= htmlspecialchars($item['type']); ?></td>
 								<td>
@@ -45,7 +45,7 @@
 					} ?>
 				</tbody>
 			</table>
-			<button type="submit" name="operation" value="buy" for="buy" class="btn btn-default btn-sm shsubmit">Buy</button>
+			<button type="submit" name="operation" value="buy" class="btn btn-default btn-sm shsubmit">Buy</button>
 			<button type="submit" name="operation" value="recalculate" class="btn btn-default btn-sm shsubmit">Re-calculate</button>
 		</form>
 	</div>

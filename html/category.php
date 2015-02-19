@@ -33,8 +33,8 @@
 				<!-- Show submit form for small size if it exists -->
 				<?php if ($item->price->small > 0): ?>
 					<div class="form-group">
-						<form name="buy" method="post">
-							<label for="small">Small: $<?= htmlspecialchars($item->price->small); ?></label>
+						<form method="post">
+							<label>Small: $<?= htmlspecialchars($item->price->small); ?></label>
 							<input type="hidden" name="item" value="<?= htmlspecialchars($item->name); ?>"/>
 							<input type="hidden" name="type" value="small"/>
 							<input type="hidden" name="price" value="<?= htmlspecialchars($item->price->small); ?>"/>
@@ -47,8 +47,8 @@
 					</div>
 				<?php endif ?>
 				<div class="form-group">
-					<form name="buy" method="post">
-						<label for="large">Large: $<?= htmlspecialchars($item->price->large); ?></label>
+					<form method="post">
+						<label>Large: $<?= htmlspecialchars($item->price->large); ?></label>
 						<input type="hidden" name="item" value="<?= htmlspecialchars($item->name); ?>"/>
 						<input type="hidden" name="type" value="large"/>
 						<input type="hidden" name="price" value="<?= htmlspecialchars($item->price->large); ?>"/>
