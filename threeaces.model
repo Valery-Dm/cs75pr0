@@ -4,15 +4,14 @@ index
 main - logo, info, categories
 
 |		|		|
-cat1 	cat2	cat3
+cat1 		cat2		cat3
 
 |
-basket - 	ordered items and total price, continue shopping, checkout with ID,
-			increase/decrease quantity from 1 up to ~ 20, remove items,
-			Items stored as an assoc_array in $_SESSION (and $_COOKIES),
-			order(id(date.number), item('name', 'quantity', 'price'))
+basket - 	ordered items and total price, continue shopping, checkout,
+			increase/decrease quantity from 0 up to ~ 20, 0 - remove items,
+			Items stored as an assoc_array in $_SESSION
 
-html
+html (view)
 	main
 	cat1,2..
 	basket
@@ -20,9 +19,10 @@ images
 	logo
 controller
 	controller (all clicks handlers)
+	data_xml
 template
 	header (navbar with categories)
 	footer	(contacts)
-css
-	style
-	bootstrap
+	css
+		style
+		bootstrap
