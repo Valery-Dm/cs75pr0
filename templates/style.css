@@ -1,3 +1,10 @@
+body{
+	min-width:370px;
+}
+@font-face {
+    font-family: glyphicons;
+    src: url(../../bootstrap/fonts/glyphicons-halflings-regular.woff);
+}
 .backimage{
 	background-image:url('../images/pizza.jpg');
 	background-size:110%;
@@ -8,4 +15,25 @@
 	margin-bottom:20px;
 	font-size:2.6em;
 }
-
+.col-lg-4, .col-lg-6{
+	background-color:lightgray;
+	padding: 10px;
+	margin:10px 0;
+	border-radius:10px;
+}
+form{
+	margin-top:10px;
+}
+.footer{
+	clear:both;
+	right:auto;
+	left:auto;
+	position: relative;
+}
+.shprice{
+	width:50px;
+	text-align:right;
+}
+.shsubmit{
+	float:right;
+}

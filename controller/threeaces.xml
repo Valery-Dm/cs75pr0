@@ -86,13 +86,15 @@
 			<item>
 				<name>Gyro Plate</name>
 				<price>
-					7.25
+					<small></small>
+					<large>7.25</large>
 				</price>
 			</item>
 			<item>
 				<name>Chicken Wing Dinner</name>
 				<price>
-					7.25
+					<small></small>
+					<large>7.25</large>
 				</price>
 			</item>
 		</category>
