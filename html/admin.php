@@ -4,7 +4,14 @@
 
 ?>
 
-<?php render('header', array('title' => 'Welcome to ' . $data['company_name'][0])); ?>
+<?php render('header', array('title' => 'Administrator\'s page')); ?>
+	
+	<pre>
+		
+	Select category you want to edit or click '+' sign to add a new one.
+	All changes will be recorded into xml file.
+	<?php //print_r($items); ?>
+	</pre>
 	
 	<div class="jumbotron backimage">
         <h1><?= htmlspecialchars($data['company_name'][0]) ?></h1>
@@ -15,11 +22,16 @@
       <div class="row marketing">
         <?php $id = 0; while(list(,$node) = each($data['categories'])): ?>
 			<div class="col-lg-6">
-			  <a href="category.php?id=<?= $id++; ?>">
+			  <a href="category-admin.php?id=<?= $id++; ?>">
 				  <h4><?= htmlspecialchars($node) ?></h4>
 			  </a>
 			</div>
 		<?php endwhile; ?>
+		<div class="col-lg-6">
+			  <a href="category-admin.php?id=<?= count($data['categories']); ?>">
+				  <h4><?= htmlspecialchars('+') ?></h4>
+			  </a>
+			</div>
 	</div>
 
 <?php render('footer', $data); ?>

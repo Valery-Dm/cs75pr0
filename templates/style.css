@@ -5,11 +5,34 @@ body{
     font-family: glyphicons;
     src: url(../../bootstrap/fonts/glyphicons-halflings-regular.woff);
 }
+.jumbotron h1{
+	font-weight:bold;
+}
+.italic{
+	font-style:italic;
+}
+.adminheaders{
+	font-size:2em;
+	padding:0;
+}
+.adminsubmit{
+	padding:6px 10px;
+	margin:10px 0;
+	float:right;
+}
+.adminimage{
+	position:relative;
+	width:100%;
+	height:120px;
+}
 .backimage{
 	background-image:url('../images/pizza.jpg');
 	background-size:110%;
 	color:White;
 	text-shadow: 2px 2px 2px #000;
+}
+.clear{
+	clear:both;
 }
 .logo{
 	margin-bottom:20px;
@@ -21,8 +44,8 @@ body{
 	margin:10px 0;
 	border-radius:10px;
 }
-form{
-	margin-top:10px;
+img{
+	margin:10px 0;
 }
 .footer{
 	clear:both;

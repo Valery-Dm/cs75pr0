@@ -10,7 +10,7 @@
 				 <span class="glyphicon glyphicon-phone"></span>
 				 Phone: <?= htmlspecialchars($data['company_phone'][0]) ?>
 			 </p>
-			 <p>&copy; dmv 2015</p>
+			 <p>&copy; dmv 2015 <a href="admin.php">Admin</a></p>
 		 
 	   </div>
 	  
