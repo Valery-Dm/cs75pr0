@@ -39,7 +39,7 @@
 									<input class="shprice" name="<?= $itemid; ?>" type="number" 
 									min="0" max="20" value="<?= htmlspecialchars($item['quantity']); ?>"/>
 								</td>
-								<td><?= htmlspecialchars($item['price'] * $item['quantity']); ?></td>
+								<td><?= number_format(($item['price'] * $item['quantity']), 2); ?></td>
 							</tr>
 				<?php 	}
 					} ?>

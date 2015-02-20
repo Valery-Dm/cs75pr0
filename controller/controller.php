@@ -49,7 +49,7 @@
 			$total += $basket['price'] * $basket['quantity'];
 		}
 		// set new total to session
-		$_SESSION['total'] = $total;
+		$_SESSION['total'] = number_format($total, 2);
 		// should call it here to trigger new message on first buy
 		message();
 				
