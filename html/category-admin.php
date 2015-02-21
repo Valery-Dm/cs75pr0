@@ -19,8 +19,8 @@
 	$adminitems = '';
 	// call buy function and prevent repetitive form action on page refresh
 	if (count($_POST) > 0){
-		$adminitems = $_POST;
-		save_changes($adminitems, $data['categories'][$id], $items[$id]);
+		$postitems = $_POST;
+		save_changes($postitems, $id);
 		//header('Location:admin.php');
 		//exit;
 	}
@@ -44,7 +44,7 @@
 		<div class="row-marketing clear">
 			<?php $i = 0; foreach ($items[$id] as $item): ?>
 				<div class="col-lg-6">
-					<input class="form-control adminheaders" type="text" name="name-<?= $i; ?>" 
+					<input class="form-control adminheaders" type="text" name="name[<?= $i; ?>]" 
 							value="<?= htmlspecialchars($item->name); ?>" /><br/>
 					<!-- 
 					Upload new photo (max 900 x 200 px)
@@ -54,8 +54,8 @@
 					<!-- Show submit form for small size if it exists -->
 					<div class="form-group">
 						
-							<label for="small-<?= $i; ?>">Small: 
-								<input type="number" name="small-<?= $i; ?>" step="any"
+							<label for="small[<?= $i; ?>]">Small: 
+								<input type="number" name="small[<?= $i; ?>]" step="any"
 										value="<?= ($item->price->small > 0) ? htmlspecialchars($item->price->small) : 0; ?>"/>
 							</label>
 							<input class="form-control" type="number" name="quantity" min="1" max="20" value="1" disabled />
@@ -67,8 +67,8 @@
 					</div>
 					<div class="form-group">
 							
-							<label for="large-<?= $i; ?>">Large: 
-								<input type="number" name="large-<?= $i; ?>" step="any"
+							<label for="large[<?= $i; ?>]">Large: 
+								<input type="number" name="large[<?= $i; ?>]" step="any"
 										value="<?= ($item->price->large > 0) ? htmlspecialchars($item->price->large) : 0; ?>"/>
 							</label>
 							<input class="form-control" type="number" name="quantity" min="1" max="20" value="1" disabled />
