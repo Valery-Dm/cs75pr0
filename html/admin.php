@@ -10,7 +10,7 @@
 		
 	Select category you want to edit or click '+' sign to add a new one.
 	All changes will be recorded into xml file.
-	<?php //print_r($items); ?>
+	<?php echo ( isset($_SESSION['changes']) ) ? 'Modifications have been applied: ' . $_SESSION['changes'] . '<br/>' : '' ?>
 	</pre>
 	
 	<div class="jumbotron backimage">
@@ -27,9 +27,9 @@
 			  </a>
 			</div>
 		<?php endwhile; ?>
-		<div class="col-lg-6">
+		<div class="col-lg-6 add-new">
 			  <a href="category-admin.php?id=<?= count($data['categories']); ?>">
-				  <h4><?= htmlspecialchars('+') ?></h4>
+				  <h4>&#43;</h4>
 			  </a>
 			</div>
 	</div>

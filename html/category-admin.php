@@ -7,22 +7,31 @@
 	$title = 'wrong category';
 	// set actual title based on query
 	$id = 0;
-	if (isset($_GET['id'])){
+	if ( isset($_GET['id']) ){
 		$id += $_GET['id'];
-		if (is_int($id) and $id < count($items)){
+		if ( is_int($id) and $id < count($items) ){
 			$title = $data['categories'][$id];
+		} elseif( is_int($id) and $id == count($items) ) {
+			create_element( $id, 'category' );
+			header('Location:admin.php');
+			exit;
 		} else {
-			$title = 'wrong category';
+			header('Location:admin.php');
 			exit;
 		}
 	}
+	if ( isset($_GET['new']) and $_GET['new'] == 1 ){
+		create_element( $id, 'item' );
+		header("Location:category-admin.php?id=$id");
+		exit;
+	}
 	$adminitems = '';
-	// call buy function and prevent repetitive form action on page refresh
-	if (count($_POST) > 0){
+	// save modified options to a file
+	if ( count($_POST) > 0 ){
 		$postitems = $_POST;
 		save_changes($postitems, $id);
-		//header('Location:admin.php');
-		//exit;
+		header('Location:admin.php');
+		exit;
 	}
 ?>
 
@@ -55,7 +64,7 @@
 					<div class="form-group">
 						
 							<label for="small[<?= $i; ?>]">Small: 
-								<input type="number" name="small[<?= $i; ?>]" step="any"
+								<input type="number" name="small[<?= $i; ?>]" step="any" min="0" max="20"
 										value="<?= ($item->price->small > 0) ? htmlspecialchars($item->price->small) : 0; ?>"/>
 							</label>
 							<input class="form-control" type="number" name="quantity" min="1" max="20" value="1" disabled />
@@ -68,7 +77,7 @@
 					<div class="form-group">
 							
 							<label for="large[<?= $i; ?>]">Large: 
-								<input type="number" name="large[<?= $i; ?>]" step="any"
+								<input type="number" name="large[<?= $i; ?>]" step="any" min="0" max="20"
 										value="<?= ($item->price->large > 0) ? htmlspecialchars($item->price->large) : 0; ?>"/>
 							</label>
 							<input class="form-control" type="number" name="quantity" min="1" max="20" value="1" disabled />
@@ -81,4 +90,9 @@
 			<?php $i++; endforeach ?>
 		</div>
 	</form>
+	<div class="col-lg-6 add-new">
+		<a href="category-admin.php?id=<?= $id; ?>&new=1">
+			<h4>&#43;</h4>
+		</a>
+	</div>
 <?php render('footer', $data); ?>

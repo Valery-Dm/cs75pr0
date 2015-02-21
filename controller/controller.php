@@ -81,8 +81,10 @@
 		message();
 	}
 	
+	
+	$file = '../controller/threeaces_changes.xml';
 	// extract data from xml
-	$xml = simplexml_load_file('../controller/threeaces.xml');
+	$xml = simplexml_load_file($file);
 	// create lines for xpath
 	$data = array( 
 	  'company_name' => 'about/title',
@@ -105,6 +107,4 @@
 	session_start();
 	// initial messages
 	message();
-	
-	
 ?>

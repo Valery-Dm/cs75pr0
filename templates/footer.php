@@ -1,5 +1,5 @@
 	 
-	  <div class="footer navbar-fixed-bottom">
+	  <div class="footer navbar-fixed-bottom clear">
 		  
 			 <h3><?= htmlspecialchars($data['company_name'][0]) ?></h3>
 			 <p>
