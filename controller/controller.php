@@ -74,9 +74,8 @@
 		buy($_SESSION['basket'], true);
 	}
 	
-	// will clear and null all data 
+	// clear session data and set initial message
 	function checkout(){
-		$_SESSION = [];
 		session_destroy();
 		message();
 	}

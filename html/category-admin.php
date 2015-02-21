@@ -64,7 +64,7 @@
 					<div class="form-group">
 						
 							<label for="small[<?= $i; ?>]">Small: 
-								<input type="number" name="small[<?= $i; ?>]" step="any" min="0" max="20"
+								<input type="number" name="small[<?= $i; ?>]" step="any" min="0" max="200"
 										value="<?= ($item->price->small > 0) ? htmlspecialchars($item->price->small) : 0; ?>"/>
 							</label>
 							<input class="form-control" type="number" name="quantity" min="1" max="20" value="1" disabled />
@@ -77,7 +77,7 @@
 					<div class="form-group">
 							
 							<label for="large[<?= $i; ?>]">Large: 
-								<input type="number" name="large[<?= $i; ?>]" step="any" min="0" max="20"
+								<input type="number" name="large[<?= $i; ?>]" step="any" min="0" max="200"
 										value="<?= ($item->price->large > 0) ? htmlspecialchars($item->price->large) : 0; ?>"/>
 							</label>
 							<input class="form-control" type="number" name="quantity" min="1" max="20" value="1" disabled />

@@ -11,7 +11,7 @@
 		if (is_int($id) and $id < count($items)){
 			$title = $data['categories'][$id];
 		} else {
-			$title = 'wrong category';
+			header('Location:main.php');
 			exit;
 		}
 	}
