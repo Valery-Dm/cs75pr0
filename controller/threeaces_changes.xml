@@ -148,7 +148,17 @@
         <name>Antipasto</name>
         <price>
           <small>4.50</small>
-          <large>5.50</large>
+          <large>6.50</large>
+        </price>
+      </item>
+    </category>
+    <category>
+      <name>test</name>
+      <item>
+        <name>item test</name>
+        <price>
+          <small>2.00</small>
+          <large>0.00</large>
         </price>
       </item>
     </category>

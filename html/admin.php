@@ -1,10 +1,7 @@
 <?php
-
 	require_once('../controller/controller.php');
-
+	render('header', array('title' => 'Administrator\'s page')); 
 ?>
-
-<?php render('header', array('title' => 'Administrator\'s page')); ?>
 	
 	<pre>
 		
@@ -17,21 +14,22 @@
         <h1><?= htmlspecialchars($data['company_name'][0]) ?></h1>
         <p class="lead italic">Restaurant</p>
         <p class="lead italic">Pizza. Grinders</p>
-      </div>
+	</div>
 		
-      <div class="row marketing">
+    <div class="row marketing">
         <?php $id = 0; while(list(,$node) = each($data['categories'])): ?>
-			<div class="col-lg-6">
-			  <a href="category-admin.php?id=<?= $id++; ?>">
-				  <h4><?= htmlspecialchars($node) ?></h4>
-			  </a>
-			</div>
+			<a href="category-admin.php?id=<?= $id++; ?>">	
+		  		<div class="col-md-4">
+					<h4><?= htmlspecialchars($node) ?></h4>
+				</div>
+			</a>
 		<?php endwhile; ?>
-		<div class="col-lg-6 add-new">
-			  <a href="category-admin.php?id=<?= count($data['categories']); ?>">
+		
+		<a href="category-admin.php?id=<?= count($data['categories']); ?>">
+			<div class="col-md-4 add-new">
 				  <h4>&#43;</h4>
-			  </a>
 			</div>
+		</a>
 	</div>
 
 <?php render('footer', $data); ?>

@@ -1,6 +1,9 @@
 body{
 	min-width:370px;
 }
+img{
+	margin:10px 0;
+}
 @font-face {
     font-family: glyphicons;
     src: url(../../bootstrap/fonts/glyphicons-halflings-regular.woff);
@@ -38,15 +41,15 @@ body{
 	margin-bottom:20px;
 	font-size:2.6em;
 }
-.col-lg-4, .col-lg-6{
-	background-color:lightgray;
+.col-md-4{
+	background-color:#ddd;
 	padding: 10px;
 	margin:10px 0;
 	border-radius:10px;
 	border:4px solid #fff;
 }
-img{
-	margin:10px 0;
+.col-md-4:hover{
+	background-color:#ccc;
 }
 .footer{
 	right:auto;
@@ -61,5 +64,8 @@ img{
 	float:right;
 }
 .add-new{
+	background-color: #ffaa00;
+}
+.add-new:hover{
 	background-color: #ff9900;
 }
