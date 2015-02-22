@@ -62,6 +62,7 @@ img{
 }
 .shsubmit{
 	float:right;
+	margin-left:10px;
 }
 .add-new{
 	background-color: #ffaa00;

@@ -1,10 +1,13 @@
 <?php
 	require_once('../controller/controller.php');
 	require_once('../controller/admincontroller.php');
+	
 	// common image
 	$image = '../images/pizza_thumbnail.jpg';
+
 	// set default title
 	$title = '';
+
 	// set actual title based on query
 	$id = 0;
 	if ( isset($_GET['id']) ){
@@ -23,6 +26,7 @@
 			exit;
 		}
 	}
+
 	if ( isset($_GET['new']) and $_GET['new'] == 1 ){
 		// create new item
 		create_element( $id, 'item' );
@@ -30,8 +34,9 @@
 		header("Location:category-admin.php?id=$id");
 		exit;
 	}
-	$adminitems = '';
-	// if submit is click
+
+	$postitems = '';
+	// if submit is clicked
 	if ( count($_POST) > 0 ){
 		$postitems = $_POST;
 		// save possible modifications to a file
@@ -39,9 +44,9 @@
 		header('Location:admin.php');
 		exit;
 	}
+ 	
+	render('header', array('title' => $title)); 
 ?>
-
-<?php render('header', array('title' => $title)); ?>
 	<pre>
 		
 	You can add photo, change names and prices. Type 0 in the name field to remove item or category.
@@ -66,7 +71,8 @@
 					<input class="form-control adminheaders" type="text" name="name[<?= $i; ?>]" 
 							value="<?= htmlspecialchars($item->name); ?>" /><br/>
 					<img src=<?= $image ?> alt="Pizza image"/>
-					<div>
+					
+					<div class="form-group">
 						<label>Small: 
 							<input type="number" name="small[<?= $i; ?>]" step="any" min="0" max="200"
 									value="<?= ($item->price->small > 0) ? htmlspecialchars($item->price->small) : 0; ?>"/>
@@ -76,7 +82,9 @@
 						<button type="submit" class="btn btn-default btn-sm" disabled>
 						  <span class="glyphicon glyphicon-shopping-cart"></span> add to Shopping Cart
 						</button>
-
+					</div>
+					
+					<div class="form-group">
 						<label>Large: 
 							<input type="number" name="large[<?= $i; ?>]" step="any" min="0" max="200"
 									value="<?= ($item->price->large > 0) ? htmlspecialchars($item->price->large) : 0; ?>"/>
@@ -87,6 +95,7 @@
 						  <span class="glyphicon glyphicon-shopping-cart"></span> add to Shopping Cart
 						</button>
 					</div>
+				
 				</div>
 			
 			<?php $i++; endforeach ?>

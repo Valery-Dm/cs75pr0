@@ -1,9 +1,12 @@
 <?php
 	require_once('../controller/controller.php');
+
 	// common image
 	$image = '../images/pizza_thumbnail.jpg';
+
 	// set default title
 	$title = '';
+
 	// set actual title based on query
 	$id = 0;
 	if (isset($_GET['id'])){
@@ -16,15 +19,16 @@
 			exit;
 		}
 	}
+
 	// call buy function and prevent repetitive form action on page refresh
 	if (count($_POST) > 0){
 		buy($_POST);
 		header("Location:category.php?id=$id");
 		exit;
 	}
-?>
 
-<?php render('header', array('title' => $title)); ?>
+	render('header', array('title' => $title)); 
+?>
 	
 	<div class="row-marketing">
 		<?php foreach ($items[$id] as $item): ?>

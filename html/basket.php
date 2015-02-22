@@ -1,6 +1,6 @@
 <?php
-
 	require_once('../controller/controller.php');
+
 	if (isset($_POST['operation'])){
 		if( $_POST['operation'] == 'recalculate' ){
 			recalculate($_POST);
@@ -11,10 +11,11 @@
 		exit;
 	}
 
+	render('header', array('title' => 'Shopping cart')); 
 ?>
 
-<?php render('header', array('title' => 'Shopping cart')); ?>
 	<div class="jumbotron">
+		
 		<form method="post" name="recalculate">
 			<table class="table" data-toggle="table" data-height="300">
 				<thead>
@@ -26,6 +27,7 @@
 						<th data-field="price">Price</th>
 					</tr>
 				</thead>
+				
 				<tbody>
 				<?php 
 					if (isset($_SESSION['basket'])){
@@ -44,10 +46,13 @@
 				<?php 	}
 					} ?>
 				</tbody>
+				
 			</table>
-			<button type="submit" name="operation" value="buy" class="btn btn-default btn-sm shsubmit">Buy</button>
-			<button type="submit" name="operation" value="recalculate" class="btn btn-default btn-sm shsubmit">Re-calculate</button>
+			
+			<button type="submit" name="operation" value="buy" class="btn btn-default shsubmit">Buy</button>
+			<button type="submit" name="operation" value="recalculate" class="btn btn-default shsubmit">Re-calculate</button>
 		</form>
+		
 	</div>
 	
 <?php render('footer', $data); ?>
