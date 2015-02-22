@@ -1,4 +1,9 @@
 <?php
+
+	// xml files
+	$file = '../controller/threeaces_changes.xml';
+	$orders_file = '../controller/orders_changes.xml';
+	
 	// call for templates, can pass some data
 	function render($template, $data=array()){
 		$path = __DIR__ . '/../templates/' . $template . '.php';
@@ -75,7 +80,7 @@
 	
 	// clear session data and set initial message
 	function checkout(){
-		$orders_file = '../controller/orders.xml';
+		global $orders_file;
 		$orders = simplexml_load_file($orders_file);
 		
 		// create new node
@@ -91,6 +96,7 @@
 			
 		}
 		
+		// needs DOMDocument to save nicely formatted xml
 		$dom = new DOMDocument('1.0');
 		$dom->preserveWhiteSpace = false;
 		$dom->formatOutput = true;
@@ -102,7 +108,6 @@
 	}
 	
 	
-	$file = '../controller/threeaces_changes.xml';
 	// extract data from xml
 	$xml = simplexml_load_file($file);
 	// create lines for xpath

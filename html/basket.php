@@ -18,7 +18,7 @@
 	<div class="jumbotron">
 		
 		<form method="post" name="recalculate">
-			<table class="table" data-toggle="table" data-height="300">
+			<table class="table">
 				<thead>
 					<tr>
 						<th data-field="id">ID</th>
