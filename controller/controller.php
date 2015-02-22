@@ -32,10 +32,10 @@
 					if( $item['item'] == $data['item']
 						and $item['type'] == $data['type'] ){
 							$_SESSION['basket'][$i]['quantity'] += $data['quantity'];
-							$i++;
 							// set 'the same' key to true
 							$same = true;
 					}
+					$i++;
 				}
 			}
 			// add new items at the end of array
@@ -52,7 +52,6 @@
 		$_SESSION['total'] = number_format($total, 2);
 		// should call it here to trigger new message on first buy
 		message();
-				
 	}
 	
 	// function will be called by Re-calculate button in Shopping Card
@@ -76,6 +75,28 @@
 	
 	// clear session data and set initial message
 	function checkout(){
+		$orders_file = '../controller/orders.xml';
+		$orders = simplexml_load_file($orders_file);
+		
+		// create new node
+		$order = $orders->addChild('order');
+		$order->addChild('time', time());
+		$order->addChild('total', $_SESSION['total']);
+		$items = $order->addChild('items');
+		foreach( $_SESSION['basket'] as $index ){
+			
+			$items->addChild('name', htmlspecialchars($index['item']) . ': ' . $index['type']);		
+			$items->addChild('quantity', $index['quantity']);
+			$items->addChild('price', number_format($index['quantity'] * $index['price'], 2));	
+			
+		}
+		
+		$dom = new DOMDocument('1.0');
+		$dom->preserveWhiteSpace = false;
+		$dom->formatOutput = true;
+		$dom->loadXML($orders->asXML());
+		$dom->save($orders_file);
+		
 		session_destroy();
 		message();
 	}

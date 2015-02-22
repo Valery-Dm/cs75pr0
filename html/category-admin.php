@@ -51,7 +51,6 @@
 		
 	You can add photo, change names and prices. Type 0 in the name field to remove item or category.
 	All changes will be applied when you click submit button.
-	
 	</pre>
 
 	<form method="post">

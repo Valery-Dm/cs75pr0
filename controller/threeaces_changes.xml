@@ -152,32 +152,6 @@
         </price>
       </item>
     </category>
-    <category>
-      <name>test</name>
-      <item>
-        <name>item test</name>
-        <price>
-          <small>2.00</small>
-          <large>0.00</large>
-        </price>
-      </item>
-      <item>
-        <name>test Item</name>
-        <price>
-          <small>1.00</small>
-          <large>4.00</large>
-        </price>
-      </item>
-    </category>
-    <category>
-      <name>Undefined Category</name>
-      <item>
-        <name>Undefined Item</name>
-        <price>
-          <small>0.00</small>
-          <large>0.00</large>
-        </price>
-      </item>
-    </category>
+    
   </menu>
 </company>

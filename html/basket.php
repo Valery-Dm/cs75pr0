@@ -1,16 +1,17 @@
 <?php
 	require_once('../controller/controller.php');
-
-	if (isset($_POST['operation'])){
-		if( $_POST['operation'] == 'recalculate' ){
-			recalculate($_POST);
-		} else {
-			checkout();
+	
+	if (isset($_SESSION['basket'])){
+		if (isset($_POST['operation'])){
+			if( $_POST['operation'] == 'recalculate' ){
+				recalculate($_POST);
+			} else {
+				checkout();
+			}
+			header('Location:basket.php');
+			exit;
 		}
-		header('Location:basket.php');
-		exit;
 	}
-
 	render('header', array('title' => 'Shopping cart')); 
 ?>
 
